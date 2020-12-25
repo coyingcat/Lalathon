@@ -93,5 +93,29 @@ result.forEach { (ele) in
 }
 
 
+i = 0
+let cnt = result.count
+// resultSecond
+// 0, content zero
+// 1, content one
+var resultSecond = [[String]]()
+while i < cnt{
+    resultSecond.append(["\(i)", result[i]])
+    i += 1
+}
 
+
+// resultThird
+// 0_0, content zero zero
+// 0_1, content zero one
+// 1, content one
+var resultThird = [[String]]()
+
+
+for piece in resultSecond{
+    var list = [String]()
+    
+    
+    
+}
 
