@@ -88,6 +88,17 @@ while i < total {
     i += 1
 }
 
+
+
+// filter
+
+result = result.filter { (piece) -> Bool in
+    piece.contains("NavigationLink")
+}
+
+
+
+
 result.forEach { (ele) in
     print(ele, "\n\n")
 }
