@@ -19,7 +19,7 @@ if let src = URL(string: "/Users/jzd/Documents/Lalathon/src/ContentView.swift"){
 }
 
 
-guard let info = contents else{
+guard let info = contents?.replacingOccurrences(of: " ", with: "") else{
     fatalError()
 }
 
@@ -39,7 +39,7 @@ struct TargetInfo{
 
 let target = TargetInfo()
 
-let total = info.count/2
+let total = info.count
 
 var result = [String]()
 var debug = 1
@@ -51,11 +51,19 @@ while i < total {
         break
     }
     
+    if let temp = info[i...endIndex]{
+        print(temp)
+        print(i)
+        print(endIndex)
+        print("\n\n")
+    }
+    
+    
     if let temp = info[i...endIndex], temp == target.start{
         
         if debug == 1{
             debug += 1
-            print(temp)
+         //   print(temp)
         }
         
         
@@ -87,7 +95,7 @@ while i < total {
     i += 1
 }
 
-print(result)
+// print(result)
 
 extension String {
     subscript(range: ClosedRange<Int>) -> String? {
