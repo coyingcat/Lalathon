@@ -11,6 +11,7 @@ import Foundation
 
 
 func extract(content info: String) -> [String]{
+    var i = 0
     let total = info.count
 
     var result = [String]()

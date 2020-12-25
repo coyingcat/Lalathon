@@ -18,15 +18,15 @@ if let src = URL(string: "/Users/jzd/Documents/Lalathon/src/ContentView.swift"){
     }
 }
 
-
-guard let info = contents?.replacingOccurrences(of: " ", with: "") else{
+// 去除空格和换行
+guard let info = contents?.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "") else{
     fatalError()
 }
 
 
 //  193
  
-var i = 0
+
 
 
 
@@ -48,9 +48,9 @@ var rawInfo = extract(content: info)
 rawInfo = rawInfo.filter { (piece) -> Bool in
     piece.contains("NavigationLink")
 }
-// rawInfo.debug()
+rawInfo.debug()
 
-i = 0
+var i = 0
 let cnt = rawInfo.count
 // resultSecond
 // 0, content zero
@@ -67,12 +67,25 @@ while i < cnt{
 // 0_1, content zero one
 // 1, content one
 var resultThird = [[String]]()
-
+print("-------")
 
 for piece in resultSecond{
-    var list = extract(content: piece[1])
     
-    
+    if piece[1].contains(target.start){
+        let list = extract(content: piece[1])
+        // list.debug()
+        let temp = list.enumerated().map({ (tmp) ->  [String] in
+            ["\(piece[0])_\(tmp.offset)", tmp.element]
+        })
+        // temp.debug()
+        resultThird.append(contentsOf: temp)
+        
+    }
+    else{
+        
+        resultThird.append(piece)
+    }
     
 }
 
+resultThird.debug()
