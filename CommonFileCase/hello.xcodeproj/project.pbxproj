@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		265C1BEA25959AFF00B0A0B3 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C1BE925959AFF00B0A0B3 /* Files.swift */; };
+		265C1C2E2596430100B0A0B3 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C1C2D2596430100B0A0B3 /* Files.swift */; };
+		265C1C312596431100B0A0B3 /* Extern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C1C302596431100B0A0B3 /* Extern.swift */; };
 		26C509D325958F0200B03DF4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C509D225958F0200B03DF4 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +26,8 @@
 
 /* Begin PBXFileReference section */
 		265C1BE625959A5000B0A0B3 /* helloDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = helloDebug.entitlements; sourceTree = "<group>"; };
-		265C1BE925959AFF00B0A0B3 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		265C1C2D2596430100B0A0B3 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		265C1C302596431100B0A0B3 /* Extern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extern.swift; sourceTree = "<group>"; };
 		26C509CF25958F0200B03DF4 /* hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hello; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C509D225958F0200B03DF4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		26C509E12595940500B03DF4 /* hello.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hello.entitlements; sourceTree = "<group>"; };
@@ -42,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		265C1C2C2596430100B0A0B3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				265C1C2D2596430100B0A0B3 /* Files.swift */,
+				265C1C302596431100B0A0B3 /* Extern.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		26C509C625958F0200B03DF4 = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +72,7 @@
 		26C509D125958F0200B03DF4 /* hello */ = {
 			isa = PBXGroup;
 			children = (
-				265C1BE925959AFF00B0A0B3 /* Files.swift */,
+				265C1C2C2596430100B0A0B3 /* Util */,
 				265C1BE625959A5000B0A0B3 /* helloDebug.entitlements */,
 				26C509E12595940500B03DF4 /* hello.entitlements */,
 				26C509D225958F0200B03DF4 /* main.swift */,
@@ -127,7 +138,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C509D325958F0200B03DF4 /* main.swift in Sources */,
-				265C1BEA25959AFF00B0A0B3 /* Files.swift in Sources */,
+				265C1C312596431100B0A0B3 /* Extern.swift in Sources */,
+				265C1C2E2596430100B0A0B3 /* Files.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
