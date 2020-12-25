@@ -12,7 +12,7 @@ var contents: String?
 if let src = URL(string: "/Users/jzd/Documents/Lalathon/src/ContentView.swift"){
     do {
         contents = try String(contentsOfFile: src.path)
-      //  print(contents ?? "")
+       // print(contents ?? "")
     } catch {
         print(error)
     }
@@ -52,10 +52,12 @@ while i < total {
     }
     
     if let temp = info[i...endIndex]{
-        print(temp)
-        print(i)
-        print(endIndex)
-        print("\n\n")
+//        print(temp)
+//        print(i)
+//        print(info[i])
+//        print(endIndex)
+//        print(info[endIndex])
+//        print("\n\n")
     }
     
     
@@ -63,29 +65,26 @@ while i < total {
         
         if debug == 1{
             debug += 1
-         //   print(temp)
+          //  print(temp)
         }
         
         
         i += target.start.count - 1
-        inner: while i < total {
-            var notMet = true
-            var beginIndex = 0
-            if notMet{
-                if info[i] == target.second{
-                    notMet = false
-                    beginIndex = i
-                }
-            }
-            else{
-                if info[i] == target.end{
-                    result.append(info[beginIndex...i] ?? "")
-                    break inner
-                }
+        var beginIndex = 0
+        first: while i < total {
+            if info[i] == target.second{
+                beginIndex = i
+                break first
             }
             i += 1
         }
-        
+        second: while i < total{
+            if info[i] == target.end{
+                result.append(info[beginIndex...i] ?? "")
+                break second
+            }
+            i += 1
+        }
         
     }
     
@@ -95,12 +94,15 @@ while i < total {
     i += 1
 }
 
-// print(result)
+result.forEach { (ele) in
+    print(ele, "\n")
+}
+
 
 extension String {
     subscript(range: ClosedRange<Int>) -> String? {
-        guard let startIndex = index(startIndex, offsetBy: range.lowerBound,limitedBy: endIndex), let endIndex = index(startIndex, offsetBy: range.upperBound,limitedBy: endIndex) else { return nil }
-        return String(self[startIndex...endIndex])
+        guard let startIdx = index(startIndex, offsetBy: range.lowerBound,limitedBy: endIndex), let endIdx = index(startIndex, offsetBy: range.upperBound,limitedBy: endIndex) else { return nil }
+        return String(self[startIdx...endIdx])
     }
     
     
