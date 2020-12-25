@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		265C1C2E2596430100B0A0B3 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C1C2D2596430100B0A0B3 /* Files.swift */; };
 		265C1C312596431100B0A0B3 /* Extern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C1C302596431100B0A0B3 /* Extern.swift */; };
+		265C1C342596474900B0A0B3 /* extract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C1C332596474900B0A0B3 /* extract.swift */; };
+		265C1C37259647EC00B0A0B3 /* DebugInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C1C36259647EC00B0A0B3 /* DebugInfo.swift */; };
 		26C509D325958F0200B03DF4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C509D225958F0200B03DF4 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		265C1BE625959A5000B0A0B3 /* helloDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = helloDebug.entitlements; sourceTree = "<group>"; };
 		265C1C2D2596430100B0A0B3 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		265C1C302596431100B0A0B3 /* Extern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extern.swift; sourceTree = "<group>"; };
+		265C1C332596474900B0A0B3 /* extract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extract.swift; sourceTree = "<group>"; };
+		265C1C36259647EC00B0A0B3 /* DebugInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInfo.swift; sourceTree = "<group>"; };
 		26C509CF25958F0200B03DF4 /* hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hello; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C509D225958F0200B03DF4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		26C509E12595940500B03DF4 /* hello.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hello.entitlements; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 			children = (
 				265C1C2D2596430100B0A0B3 /* Files.swift */,
 				265C1C302596431100B0A0B3 /* Extern.swift */,
+				265C1C36259647EC00B0A0B3 /* DebugInfo.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 				265C1BE625959A5000B0A0B3 /* helloDebug.entitlements */,
 				26C509E12595940500B03DF4 /* hello.entitlements */,
 				26C509D225958F0200B03DF4 /* main.swift */,
+				265C1C332596474900B0A0B3 /* extract.swift */,
 			);
 			path = hello;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			files = (
 				26C509D325958F0200B03DF4 /* main.swift in Sources */,
 				265C1C312596431100B0A0B3 /* Extern.swift in Sources */,
+				265C1C37259647EC00B0A0B3 /* DebugInfo.swift in Sources */,
 				265C1C2E2596430100B0A0B3 /* Files.swift in Sources */,
+				265C1C342596474900B0A0B3 /* extract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
