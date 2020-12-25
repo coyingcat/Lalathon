@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		26C509D325958F0200B03DF4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C509D225958F0200B03DF4 /* main.swift */; };
-		26C509DB25958F4700B03DF4 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C509DA25958F4700B03DF4 /* Files.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +23,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		265C1BE625959A5000B0A0B3 /* helloDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = helloDebug.entitlements; sourceTree = "<group>"; };
 		26C509CF25958F0200B03DF4 /* hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hello; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C509D225958F0200B03DF4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		26C509DA25958F4700B03DF4 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		26C509E12595940500B03DF4 /* hello.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hello.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,8 @@
 		26C509D125958F0200B03DF4 /* hello */ = {
 			isa = PBXGroup;
 			children = (
-				26C509DA25958F4700B03DF4 /* Files.swift */,
+				265C1BE625959A5000B0A0B3 /* helloDebug.entitlements */,
+				26C509E12595940500B03DF4 /* hello.entitlements */,
 				26C509D225958F0200B03DF4 /* main.swift */,
 			);
 			path = hello;
@@ -123,7 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C509D325958F0200B03DF4 /* main.swift in Sources */,
-				26C509DB25958F4700B03DF4 /* Files.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +248,8 @@
 		26C509D725958F0200B03DF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = hello/helloDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D878P8TW6L;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -259,6 +261,7 @@
 		26C509D825958F0200B03DF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = hello/hello.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D878P8TW6L;
 				ENABLE_HARDENED_RUNTIME = YES;

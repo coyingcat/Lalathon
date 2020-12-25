@@ -3,7 +3,7 @@
 import Foundation
 
 // MARK: - Locations
-
+/*
 /// Enum describing various kinds of locations that can be found on a file system.
 public enum LocationKind {
     /// A file can be found at the location.
@@ -1021,3 +1021,7 @@ private extension String {
         return appending(suffix)
     }
 }
+
+ 
+ 
+ */
