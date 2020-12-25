@@ -39,7 +39,10 @@ struct TargetInfo{
 
 let target = TargetInfo()
 
-let total = info.count
+let total = info.count/2
+
+var result = [String]()
+
 while i < total {
     
     
@@ -52,13 +55,16 @@ while i < total {
         i += target.start.count - 1
         inner: while i < total {
             var notMet = true
+            var beginIndex = 0
             if notMet{
                 if info[i] == target.second{
                     notMet = false
+                    beginIndex = i
                 }
             }
             else{
                 if info[i] == target.end{
+                    result.append(info[beginIndex...i] ?? "")
                     break inner
                 }
             }
@@ -74,7 +80,7 @@ while i < total {
     i += 1
 }
 
-
+print(result)
 
 extension String {
     subscript(range: ClosedRange<Int>) -> String? {
