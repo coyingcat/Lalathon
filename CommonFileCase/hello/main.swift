@@ -12,7 +12,7 @@ var contents: String?
 if let src = URL(string: "/Users/jzd/Documents/Lalathon/src/ContentView.swift"){
     do {
         contents = try String(contentsOfFile: src.path)
-        print(contents ?? "")
+      //  print(contents ?? "")
     } catch {
         print(error)
     }
@@ -42,7 +42,7 @@ let target = TargetInfo()
 let total = info.count/2
 
 var result = [String]()
-
+var debug = 1
 while i < total {
     
     
@@ -50,7 +50,14 @@ while i < total {
     if endIndex >= total{
         break
     }
+    
     if let temp = info[i...endIndex], temp == target.start{
+        
+        if debug == 1{
+            debug += 1
+            print(temp)
+        }
+        
         
         i += target.start.count - 1
         inner: while i < total {
