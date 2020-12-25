@@ -55,3 +55,25 @@ func extract(content info: String) -> [String]{
     }
     return result
 }
+
+
+
+func regex(with content: String) -> [String]?{
+    
+
+    let pattern = #"destination:(.+?)\("# //Swift 5+ only
+    //let pattern = "(?:\\w+)(?:\\s+\\w+)*"
+    do {
+        let regex = try NSRegularExpression(pattern: pattern)
+        let matches = regex.matches(in: content, range: NSRange(0..<content.utf16.count))
+        let matchingWords = matches.map {
+            String(content[Range($0.range, in: content)!])
+        }
+       // print(matchingWords) //(test:3)->["key", "value", "comment"]
+        return matchingWords
+    } catch {
+        print("Regex was bad!")
+        return nil
+    }
+
+}

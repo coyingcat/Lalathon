@@ -48,7 +48,7 @@ var rawInfo = extract(content: info)
 rawInfo = rawInfo.filter { (piece) -> Bool in
     piece.contains("NavigationLink")
 }
-rawInfo.debug()
+// rawInfo.debug()
 
 var i = 0
 let cnt = rawInfo.count
@@ -88,4 +88,15 @@ for piece in resultSecond{
     
 }
 
-resultThird.debug()
+var result = [[String]]()
+// index, file list
+
+
+for piece in resultThird{
+    if let list = regex(with: piece[1]){
+        list.debug()
+    }
+    
+    
+}
+
