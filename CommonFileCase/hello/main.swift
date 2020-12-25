@@ -52,24 +52,24 @@ rawInfo = rawInfo.filter { (piece) -> Bool in
 
 var i = 0
 let cnt = rawInfo.count
-// resultSecond
+// midData
 // 0, content zero
 // 1, content one
-var resultSecond = [[String]]()
+var midData = [[String]]()
 while i < cnt{
-    resultSecond.append(["\(i)", rawInfo[i]])
+    midData.append(["\(i)", rawInfo[i]])
     i += 1
 }
 
 
-// resultThird
+// handledData
 // 0_0, content zero zero
 // 0_1, content zero one
 // 1, content one
-var resultThird = [[String]]()
+var handledData = [[String]]()
 print("-------")
 
-for piece in resultSecond{
+for piece in midData{
     
     if piece[1].contains(target.start){
         let list = extract(content: piece[1])
@@ -78,12 +78,12 @@ for piece in resultSecond{
             ["\(piece[0])_\(tmp.offset)", tmp.element]
         })
         // temp.debug()
-        resultThird.append(contentsOf: temp)
+        handledData.append(contentsOf: temp)
         
     }
     else{
         
-        resultThird.append(piece)
+        handledData.append(piece)
     }
     
 }
@@ -92,7 +92,7 @@ var result = [[String]]()
 // index, file list
 
 
-for piece in resultThird{
+for piece in handledData{
     if let list = regex(with: piece[1]){
        // list.debug()
         let tmp = [piece[0]] + list
