@@ -67,7 +67,7 @@ func regex(with content: String) -> [String]?{
         let regex = try NSRegularExpression(pattern: pattern)
         let matches = regex.matches(in: content, range: NSRange(0..<content.utf16.count))
         let matchingWords = matches.map {
-            String(content[Range($0.range, in: content)!])
+            String(content[Range($0.range(at: 1), in: content)!])
         }
        // print(matchingWords) //(test:3)->["key", "value", "comment"]
         return matchingWords

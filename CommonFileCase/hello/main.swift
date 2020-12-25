@@ -94,9 +94,11 @@ var result = [[String]]()
 
 for piece in resultThird{
     if let list = regex(with: piece[1]){
-        list.debug()
+       // list.debug()
+        let tmp = [piece[0]] + list
+        result.append(tmp)
     }
-    
-    
+
 }
 
+result.debug()
