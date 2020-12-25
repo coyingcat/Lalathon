@@ -51,37 +51,31 @@ while i < total {
         break
     }
     
-    if let temp = info[i...endIndex]{
-//        print(temp)
-//        print(i)
-//        print(info[i])
-//        print(endIndex)
-//        print(info[endIndex])
-//        print("\n\n")
-    }
-    
-    
     if let temp = info[i...endIndex], temp == target.start{
         
         if debug == 1{
             debug += 1
           //  print(temp)
         }
-        
+        var bracketCount = 0
         
         i += target.start.count - 1
         var beginIndex = 0
         first: while i < total {
-            if info[i] == target.second{
-                beginIndex = i
-                break first
-            }
-            i += 1
-        }
-        second: while i < total{
-            if info[i] == target.end{
-                result.append(info[beginIndex...i] ?? "")
-                break second
+            inner: switch info[i] {
+            case target.second:
+                if bracketCount == 0{
+                    beginIndex = i
+                }
+                bracketCount += 1
+            case target.end:
+                bracketCount -= 1
+                if bracketCount == 0{
+                    result.append(info[(beginIndex+1)...(i-1)] ?? "")
+                    break inner
+                }
+            default:
+                ()
             }
             i += 1
         }
@@ -95,7 +89,7 @@ while i < total {
 }
 
 result.forEach { (ele) in
-    print(ele, "\n")
+    print(ele, "\n\n")
 }
 
 
