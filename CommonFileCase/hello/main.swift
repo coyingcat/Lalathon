@@ -130,12 +130,9 @@ let val = end.timeIntervalSince(start)
 
 
 // go on
+let outCnt = classNameResult.count
 
-
-var result = classNameResult.map { (info) -> [String] in
-    return [info[0]]
-}
-
+var result = [[File]](repeating: [File](), count: outCnt)
 
 let path = "\(NSHomeDirectory())/Downloads/Cookbook-main 2/Cookbook/Cookbook/Recipes"
 
@@ -144,7 +141,7 @@ let folder = try Folder(path: path)
 
     
 i = 0
-let outCnt = classNameResult.count
+
 while i < outCnt {
     var j = 1
     let innerCnt = classNameResult[i].count
@@ -153,7 +150,7 @@ while i < outCnt {
             do {
                 let content = try String(contentsOfFile: file.path, encoding: .utf8)
                 if content.contains("struct \(classNameResult[i][j])"){
-                    result[i].append(file.name)
+                    result[i].append(file)
                     break third
                 }
             } catch {
@@ -166,4 +163,22 @@ while i < outCnt {
 }
 
 
-result.debug()
+i = 0
+let manager = FileManager.default
+while i < outCnt {
+    let folderPath = path + "/\(classNameResult[i][0])"
+    do {
+        try manager.createDirectory(atPath: folderPath, withIntermediateDirectories: false, attributes: nil)
+    } catch {
+        fatalError()
+    }
+    
+    let destinationFolder = try Folder(path: folderPath)
+    for tbdFile in result[i]{
+        if manager.fileExists(atPath: tbdFile.path){
+            try tbdFile.move(to: destinationFolder)
+        }
+    }
+    i += 1
+}
+
