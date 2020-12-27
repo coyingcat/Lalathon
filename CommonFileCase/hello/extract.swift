@@ -17,18 +17,13 @@ func extract(content info: String) -> [String]{
     var result = [String]()
 
     while i < total {
-        
-        
-        let endIndex = i + target.start.count - 1
+        let endIndex = i + target.cnt - 1
         if endIndex >= total{
             break
         }
-        
-        if let temp = info[i...endIndex], temp == target.start{
-
+        if info.isValid(from: i){
             var bracketCount = 0
-            
-            i += target.start.count - 1
+            i += target.cnt - 1
             var beginIndex = 0
             first: while i < total {
                 inner: switch info[i] {
@@ -76,4 +71,22 @@ func regex(with content: String) -> [String]?{
         return nil
     }
 
+}
+
+
+
+
+extension String{
+    
+    func isValid(from index: Int) -> Bool{
+        var i = 0
+        while i < target.cnt {
+            if self[index + i] != target.start[i]{
+                return false
+            }
+            i += 1
+        }
+        return true
+    }
+    
 }

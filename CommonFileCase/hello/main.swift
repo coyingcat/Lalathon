@@ -7,6 +7,10 @@
 
 import Foundation
 
+
+let start = Date()
+
+
 var contents: String?
 
 if let src = URL(string: "\(NSHomeDirectory())/Documents/Lalathon/src/ContentView.swift"){
@@ -34,6 +38,12 @@ struct TargetInfo{
     let start = "Section"
     let second: Character = "{"
     let end: Character = "}"
+    
+    let cnt: Int
+    
+    init() {
+        cnt = start.count
+    }
 }
 
 
@@ -102,3 +112,17 @@ for piece in handledData{
 }
 
 result.debug()
+
+
+
+
+let end = Date()
+
+
+let val = end.timeIntervalSince(start)
+
+print(val)
+
+//  0.808 -> 0.812
+
+print(val.runtime)
