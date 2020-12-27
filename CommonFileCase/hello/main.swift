@@ -9,7 +9,7 @@ import Foundation
 
 
 let start = Date()
-
+// 性能
 
 var contents: String?
 
@@ -98,7 +98,7 @@ for piece in midData{
     
 }
 
-var result = [[String]]()
+var classNameResult = [[String]]()
 // index, file list
 
 
@@ -106,23 +106,64 @@ for piece in handledData{
     if let list = regex(with: piece[1]){
        // list.debug()
         let tmp = [piece[0]] + list
-        result.append(tmp)
+        classNameResult.append(tmp)
     }
 
 }
 
-result.debug()
+classNameResult.debug()
 
 
-
+// 性能
 
 let end = Date()
 
 
 let val = end.timeIntervalSince(start)
 
-print(val)
+// print(val)
 
 //  0.808 -> 0.812
 
-print(val.runtime)
+// print(val.runtime)
+
+
+
+// go on
+
+
+var result = classNameResult.map { (info) -> [String] in
+    return [info[0]]
+}
+
+
+let path = "\(NSHomeDirectory())/Downloads/Cookbook-main 2/Cookbook/Cookbook/Recipes"
+
+let folder = try Folder(path: path)
+
+
+    
+i = 0
+let outCnt = classNameResult.count
+while i < outCnt {
+    var j = 1
+    let innerCnt = classNameResult[i].count
+    while j < innerCnt{
+        third: for file in folder.files {
+            do {
+                let content = try String(contentsOfFile: file.path, encoding: .utf8)
+                if content.contains("struct \(classNameResult[i][j])"){
+                    result[i].append(file.name)
+                    break third
+                }
+            } catch {
+                print(error)
+            }
+        }
+        j += 1
+    }
+    i += 1
+}
+
+
+result.debug()
