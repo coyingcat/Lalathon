@@ -586,8 +586,8 @@ public extension Folder.ChildSequence {
 
     /// Count the number of locations contained within this sequence.
     /// Complexity: `O(N)`.
-    func count() -> Int {
-        return reduce(0) { count, _ in count + 1 }
+    var count: Int{
+        reduce(0){ count, _ in count + 1 }
     }
 
     /// Gather the names of all of the locations contained within this sequence.
