@@ -13,16 +13,21 @@ let path = "\(NSHomeDirectory())/Downloads"
 let folder = try Folder(path: path)
 var i = 0
 let cnt = folder.files.count
-var previous: File? = nil
+var current: File? = nil
 for file in folder.files {
-    
-    if file.name.contains("(1"){
-        if let pre = previous{
-            print(pre.name)
+    if let c = current{
+        if c.sheerName.contains(file.sheerName){
+            print(c.name)
+            print(file.name)
+            print("----\n")
         }
-        print(file.name)
-        print("----\n")
+        current = nil
     }
-    previous = file
+    if file.name.contains("(1"){
+        current = file
+    }
 }
+
+
+
 

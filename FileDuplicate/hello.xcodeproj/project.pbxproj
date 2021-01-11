@@ -12,6 +12,7 @@
 		265C1C37259647EC00B0A0B3 /* DebugInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C1C36259647EC00B0A0B3 /* DebugInfo.swift */; };
 		2667E9C42598EA5B00128365 /* measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2667E9C32598EA5B00128365 /* measure.swift */; };
 		26C509D325958F0200B03DF4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C509D225958F0200B03DF4 /* main.swift */; };
+		26D3E49825ABFD2B00786B6E /* FileAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D3E49725ABFD2B00786B6E /* FileAdd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		26C509CF25958F0200B03DF4 /* hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hello; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C509D225958F0200B03DF4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		26C509E12595940500B03DF4 /* hello.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hello.entitlements; sourceTree = "<group>"; };
+		26D3E49725ABFD2B00786B6E /* FileAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAdd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +53,10 @@
 		265C1C2C2596430100B0A0B3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				265C1C2D2596430100B0A0B3 /* Files.swift */,
-				265C1C302596431100B0A0B3 /* Extern.swift */,
 				265C1C36259647EC00B0A0B3 /* DebugInfo.swift */,
+				265C1C302596431100B0A0B3 /* Extern.swift */,
+				26D3E49725ABFD2B00786B6E /* FileAdd.swift */,
+				265C1C2D2596430100B0A0B3 /* Files.swift */,
 				2667E9C32598EA5B00128365 /* measure.swift */,
 			);
 			path = Util;
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C509D325958F0200B03DF4 /* main.swift in Sources */,
+				26D3E49825ABFD2B00786B6E /* FileAdd.swift in Sources */,
 				265C1C312596431100B0A0B3 /* Extern.swift in Sources */,
 				265C1C37259647EC00B0A0B3 /* DebugInfo.swift in Sources */,
 				265C1C2E2596430100B0A0B3 /* Files.swift in Sources */,
