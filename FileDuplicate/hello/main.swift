@@ -19,7 +19,17 @@ for file in folder.files {
         if c.sheerName.contains(file.sheerName){
             print(c.name)
             print(file.name)
+            do {
+                //return [FileAttributeKey : Any]
+                let attr = try FileManager.default.attributesOfItem(atPath: c.path)
+                let fileSize : UInt64 = attr[FileAttributeKey.size] as! UInt64
+                print("fileSize: \(fileSize.sheerSize)")
+                
+            } catch {
+                print("Error: \(error)")
+            }
             print("----\n")
+            
         }
         current = nil
     }
