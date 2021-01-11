@@ -553,7 +553,7 @@ public extension Folder {
             return child ?? next()
         }
 
-        private mutating func loadItemNames() -> [String] {
+        private func loadItemNames() -> [String] {
             let contents = try? fileManager.contentsOfDirectory(atPath: folder.path)
             let names = contents?.sorted() ?? []
             return reverseTopLevelTraversal ? names.reversed() : names
